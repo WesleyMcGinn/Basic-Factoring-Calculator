@@ -12,11 +12,13 @@
   var final1;
   var final2;
   var tries;
+  var solutionExists = false;
   function activateFactoringCalculator() {
     cloud_calculations++;
+    solutionExists = false;
+    console.clear();
     addTo = prompt("The two numbers add to:", "b value");
     multiplyTo = prompt("The two numbers multiply to:", "c value");
-    console.clear();
     console.log("Factoring Calculator is starting calculations....");
     if (addTo == 0 && multiplyTo == 0) {
       try1 = 0;
@@ -34,6 +36,7 @@
           if (try1 + try2 == addTo && try1 * try2 == multiplyTo) {
             final1 = try1;
             final2 = try2;
+            solutionExists = true;
             console.log("Got solution:");
             console.log(final1);
             console.log(final2);
@@ -43,6 +46,10 @@
           }
         } while (try2 <= 1000);
       } while (tries <= 2000);
+    }
+    if (solutionExists == false) {
+      console.log("ERROR:  NO SOLUTION!");
+      alert("There is no solution!");
     }
   }
 </script>
