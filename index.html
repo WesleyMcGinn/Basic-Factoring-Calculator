@@ -1,5 +1,12 @@
+<!DOCTYPE html>
+<body>
+<html>
 <script src="https://kihtrak.com/cloud_variable/cloudify.min.js"></script>
 <script>
+  //         \        / |¯¯¯  /¯¯¯
+  //          \  /\  /  |-    \--\
+  //           \/  \/   |___  ___/
+  //       BASIC FACTORING CALCULATOR!
   var cloud_calculations;
   var addTo;
   var multiplyTo;
@@ -19,6 +26,15 @@
     if (addTo == 0 && multiplyTo == 0) {
       try1 = 0;
       try2 = 0;
+      final1 = try1;
+      final2 = try2;
+      solutionExists = true;
+      console.log("Got solution:");
+      console.log(final1);
+      console.log(final2);
+      alert("The two numbers are " + final1 + " and " + final2 + ".");
+      try2 = 5000;
+      tries = 5000;
     } else {
       try1 = -1000;
       try2 = -1000;
@@ -57,3 +73,5 @@
     onClick="activateFactoringCalculator();"
   />
 </form>
+</body>
+</html>
