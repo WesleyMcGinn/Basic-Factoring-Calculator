@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<title>Factoring Calculator</title>
-<body>
+
+<head>
+  <title>Factoring Calculator</title>
+  
   <script>
+    
     var addTo;
     var multiplyTo;
     var try1;
@@ -10,6 +13,7 @@
     var final2;
     var tries;
     var solutionExists = false;
+    
     function activateFactoringCalculator() {
       solutionExists = false;
       addTo = parseInt(document.getElementById("b").value);
@@ -49,11 +53,22 @@
         document.getElementById("out").innerHTML = '<b>ERROR:</b><br>There is no solution!';
       }
     }
+    
+    function calculate() {
+      if (Number.isInteger(parseInt(document.getElementById("b").value)) && Number.isInteger(parseInt(document.getElementById("c").value))) {
+        activateFactoringCalculator();
+      } else {
+        document.getElementById("out").innerHTML = '<small>Waiting for numbers....</small>';
+      }
+    }
+    
   </script>
+</head>
+
+<body onload="setup()">
   <label for="b">Two numbers add to:</label>
-  <input type="number" id="b" value="15"><br><br>
+  <input type="number" id="b" value="15" oninput="calculate()"><br><br>
   <label for="b">And they multiply to:</label>
-  <input type="number" id="c" value="56"><br><br>
-  <button onClick="activateFactoringCalculator();"><b>CALCULATE!</b></button><br><br>
+  <input type="number" id="c" value="56" oninput="calculate()"><br><br>
   <div id="out"></div>
 </body>
